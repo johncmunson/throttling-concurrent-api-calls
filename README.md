@@ -1,1 +1,1 @@
-Example of how to use [p-map](https://github.com/sindresorhus/p-map) and concurrency limits.
+Be a good citizen of the internet and don't bombard APIs with huge numbers of concurrent requests... I'm looking at you Promise.all(). Use p-map to place a limit on the number of concurrent connections that are open at any given time!
