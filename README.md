@@ -4,7 +4,7 @@ However, sometimes you might need to fire off a few _thousand_ requests! Now you
 
 What we need is a way to spread the load we're placing on the external service over a longer period of time... this is called throttling. This is a great use case for [p-map](https://github.com/sindresorhus/p-map) by the prolific library author [Sindre Sorhus](https://github.com/sindresorhus). It's a near drop in replacement for Promise.all(), but allows you to place a limit on the number of concurrent promises that are running at any given time.
 
-Checkout [this page](https://github.com/sindresorhus/promise-fun) for all kinds of other things
+Checkout [this page](https://github.com/sindresorhus/promise-fun) more related packages.
 
 ```js
 const pMap = require('p-map')
