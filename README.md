@@ -9,7 +9,7 @@ _Note: Checkout the `bluebird` branch to see an implementation using Bluebird's 
 Checkout [this page](https://github.com/sindresorhus/promise-fun) more related packages.
 
 ```js
-const pMap = require('p-map')
+const Promise = require('bluebird')
 const Chance = require('chance')
 
 const chance = new Chance()
@@ -23,14 +23,12 @@ const getUser = async (id) => {
 }
 
 const getUsers = async (userIds) => {
-  const users = await pMap(userIds, getUser)
-  // Using pMap without concurrency is equivalent to...
-  // const users = await Promise.all(userIds.map(id => getUser(id)))
+  const users = await Promise.all(userIds.map(id => getUser(id)))
   return users
 }
 
 const getUsersThrottled = async (userIds) => {
-  const users = await pMap(userIds, getUser, { concurrency: 2 })
+  const users = await Promise(userIds, getUser, { concurrency: 2 })
   return users
 }
 
