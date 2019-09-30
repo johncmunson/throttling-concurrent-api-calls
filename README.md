@@ -6,7 +6,7 @@ What we need is a way to spread the load we're placing on the external service o
 
 _Note: Checkout the `bluebird` branch to see an implementation using Bluebird's map function._
 
-Checkout [this page](https://github.com/sindresorhus/promise-fun) for more related packages.
+More related packages [here](https://github.com/sindresorhus/promise-fun).
 
 ```js
 const pMap = require('p-map')
