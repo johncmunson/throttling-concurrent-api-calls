@@ -28,7 +28,7 @@ const getUsers = async (userIds) => {
 }
 
 const getUsersThrottled = async (userIds) => {
-  const users = await Promise(userIds, getUser, { concurrency: 2 })
+  const users = await Promise.map(userIds, getUser, { concurrency: 2 })
   return users
 }
 
