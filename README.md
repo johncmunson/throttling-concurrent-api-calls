@@ -4,6 +4,8 @@ However, sometimes you might need to fire off a few _thousand_ requests! Now you
 
 What we need is a way to spread the load we're placing on the external service over a longer period of time... this is called throttling. This is a great use case for [p-map](https://github.com/sindresorhus/p-map) by the prolific library author [Sindre Sorhus](https://github.com/sindresorhus). It's a near drop in replacement for Promise.all(), but allows you to place a limit on the number of concurrent promises that are running at any given time. If you're already using a full-featured Promise library like Bluebird, it might come with a [similar method](http://bluebirdjs.com/docs/api/promise.map.html) built-in.
 
+_Note: Checkout the `bluebird` branch to see an implementation using Bluebird's map function._
+
 Checkout [this page](https://github.com/sindresorhus/promise-fun) more related packages.
 
 ```js

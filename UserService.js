@@ -1,4 +1,4 @@
-const pMap = require('p-map')
+const Promise = require('bluebird')
 const Chance = require('chance')
 
 const chance = new Chance()
@@ -11,14 +11,12 @@ class UserService {
   }
 
   async getUsers(ids) {
-    const users = await pMap(ids, this.getUser)
-    // Using pMap without concurrency is equivalent to...
-    // const users = await Promise.all(userIds.map(id => getUser(id)))
+    const users = await Promise.all(ids.map(id => this.getUser(id)))
     return users
   }
 
   async getUsersThrottled(ids) {
-    const users = await pMap(ids, this.getUser, { concurrency: 2 })
+    const users = await Promise.map(ids, this.getUser, { concurrency: 2 })
     return users
   }
 }
