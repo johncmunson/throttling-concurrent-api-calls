@@ -1,7 +1,7 @@
 const { userService } = require('./UserService')
 const { userIds } = require('./UserData')
 
-test('Concurrent requests take longer to resolve when they are throttled using p-map', async () => {
+test('Concurrent requests take longer to resolve when they are throttled using bluebird\'s Promise.map()', async () => {
   jest.setTimeout(30000) // increase allowable time per test
 
   const startFetchingUsersTimestamp = Date.now()
